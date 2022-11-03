@@ -19,7 +19,7 @@ SELECT * FROM countrylanguage WHERE countrycode = 'VAT';
 
 -- TODO: Write SQL query here
 SELECT 
-  name 
+  code, name 
 FROM 
   country 
 RIGHT JOIN 
@@ -39,6 +39,7 @@ WHERE
 -- that country she might be flying to.
 
 -- TODO: Write SQL query here
+SELECT name FROM city WHERE countrycode = 'SMR' AND name != 'San Marino';
 
 
 -- Clue #5: Oh no, she pulled a switch – there are two cities with very similar 
