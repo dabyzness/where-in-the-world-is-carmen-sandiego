@@ -22,7 +22,7 @@ SELECT
   code, name 
 FROM 
   country 
-RIGHT JOIN 
+INNER JOIN 
   countrylanguage 
 ON 
   country.code = countrylanguage.countrycode 
@@ -58,6 +58,11 @@ SELECT name, countrycode FROM city WHERE name LIKE 'Serra%' AND name != 'Serrava
 -- we'll follow right behind you!
 
 -- TODO: Write SQL query here
+SELECT city.name FROM city INNER JOIN country ON city.id = country.capital WHERE code = 'BRA';
+
+SELECT capital FROM country WHERE code = 'BRA';
+
+SELECT * FROM city WHERE id = 211;
 
 
 -- Clue #7: She knows we're on to her – her taxi dropped her off at the 
