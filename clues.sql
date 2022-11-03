@@ -4,7 +4,14 @@
 -- populated country in Southern Europe, and we'll start looking for her there.
  
 -- TODO: Write SQL query here
-SELECT * FROM country WHERE region = 'Southern Europe' ORDER BY population ASC;
+SELECT 
+  * 
+FROM 
+  country 
+WHERE 
+  region = 'Southern Europe' 
+ORDER BY 
+  population ASC;
 
 
 -- Clue #2: Now that we're here, we have insight that Carmen was seen attending 
@@ -13,7 +20,12 @@ SELECT * FROM country WHERE region = 'Southern Europe' ORDER BY population ASC;
 -- call in a translator to work with you.
 
 -- TODO: Write SQL query here
-SELECT * FROM countrylanguage WHERE countrycode = 'VAT';
+SELECT 
+  * 
+FROM 
+  countrylanguage 
+WHERE 
+  countrycode = 'VAT';
 
 -- Clue #3: We have new news on the classes Carmen attended – our gumshoes tell us she's moved on to a different country, a country where people speak only the language she was learning. Find out which nearby country speaks nothing but that language.
 
@@ -39,7 +51,13 @@ WHERE
 -- that country she might be flying to.
 
 -- TODO: Write SQL query here
-SELECT name FROM city WHERE countrycode = 'SMR' AND name != 'San Marino';
+SELECT 
+  name 
+FROM 
+  city 
+WHERE 
+  countrycode = 'SMR' AND 
+  name != 'San Marino';
 
 
 -- Clue #5: Oh no, she pulled a switch – there are two cities with very similar 
@@ -49,7 +67,16 @@ SELECT name FROM city WHERE countrycode = 'SMR' AND name != 'San Marino';
 -- search for what country it's in. Hurry!
 
 -- TODO: Write SQL query here
-SELECT name, countrycode FROM city WHERE name LIKE 'Serra%' AND name != 'Serravalle';
+SELECT 
+  name, 
+  countrycode 
+FROM 
+  city 
+WHERE 
+  name 
+LIKE 
+  'Serra%' AND 
+  name != 'Serravalle';
 
 
 -- Clue #6: We're close! Our South American agent says she just got a taxi at
@@ -58,11 +85,16 @@ SELECT name, countrycode FROM city WHERE name LIKE 'Serra%' AND name != 'Serrava
 -- we'll follow right behind you!
 
 -- TODO: Write SQL query here
-SELECT city.name FROM city INNER JOIN country ON city.id = country.capital WHERE code = 'BRA';
-
-SELECT capital FROM country WHERE code = 'BRA';
-
-SELECT * FROM city WHERE id = 211;
+SELECT 
+  city.name 
+FROM 
+  city 
+INNER JOIN 
+  country 
+ON 
+  city.id = country.capital 
+WHERE 
+  code = 'BRA';
 
 
 -- Clue #7: She knows we're on to her – her taxi dropped her off at the 
@@ -85,4 +117,14 @@ SELECT * FROM city WHERE id = 211;
 -- info, and we'll be sure to meet her at the gates with bells on.
 
 -- TODO: Write SQL query here
-
+SELECT 
+  city.name, 
+  country.name 
+FROM 
+  city 
+INNER JOIN 
+  country 
+ON 
+  city.countrycode = country.code 
+WHERE 
+  city.population = 91084;
