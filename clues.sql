@@ -11,7 +11,8 @@ FROM
 WHERE 
   region = 'Southern Europe' 
 ORDER BY 
-  population ASC;
+  population ASC
+LIMIT 1;
 
 
 -- Clue #2: Now that we're here, we have insight that Carmen was seen attending 
