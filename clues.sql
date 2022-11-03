@@ -49,6 +49,7 @@ SELECT name FROM city WHERE countrycode = 'SMR' AND name != 'San Marino';
 -- search for what country it's in. Hurry!
 
 -- TODO: Write SQL query here
+SELECT name, countrycode FROM city WHERE name LIKE 'Serra%' AND name != 'Serravalle';
 
 
 -- Clue #6: We're close! Our South American agent says she just got a taxi at
